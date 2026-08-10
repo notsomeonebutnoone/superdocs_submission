@@ -1,0 +1,186 @@
+{
+  "name": "Task 1 - Founder Doc Signal Machine (Draft Only)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "8e24f989-b3b3-4475-aab0-b19ba5b8af20",
+      "name": "Run Manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -760,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "74a717b7-f87a-4b79-8bad-d772076011bf",
+              "name": "projectDirectory",
+              "value": "/files/task-1-growth-machine",
+              "type": "string"
+            },
+            {
+              "id": "70929a4d-cf24-44ca-8c98-038b2900c79c",
+              "name": "batchFile",
+              "value": "data/batch-1.csv",
+              "type": "string"
+            },
+            {
+              "id": "8d906261-4fdb-4338-8ee4-d68a546c1412",
+              "name": "runId",
+              "value": "n8n-run-1",
+              "type": "string"
+            },
+            {
+              "id": "f4a41d07-62da-4740-bf7a-997d290136f4",
+              "name": "useLlm",
+              "value": false,
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5c9b56c4-4018-4537-a276-3ca1d76936cd",
+      "name": "Workflow Configuration",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -540,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const cfg = $json;\n\nif (typeof cfg.projectDirectory !== 'string' || !cfg.projectDirectory.startsWith('/')) {\n  throw new Error('projectDirectory must be an absolute path visible inside n8n.');\n}\nif (/[\\r\\n\\0]/.test(cfg.projectDirectory)) {\n  throw new Error('projectDirectory contains an unsafe character.');\n}\nif (typeof cfg.batchFile !== 'string' || !/^data\\/[A-Za-z0-9][A-Za-z0-9._-]*\\.csv$/.test(cfg.batchFile)) {\n  throw new Error('batchFile must look like data/batch-name.csv and cannot traverse directories.');\n}\nif (typeof cfg.runId !== 'string' || !/^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/.test(cfg.runId)) {\n  throw new Error('runId must match the Python machine safety rule.');\n}\n\nconst shellQuote = (value) => `'${String(value).replace(/'/g, `'\\\"'\\\"'`)}'`;\nconst noLlm = cfg.useLlm === true ? '' : ' --no-llm';\nconst command = [\n  'cd', shellQuote(cfg.projectDirectory), '&&',\n  'python3 -m machine.run',\n  '--batch', shellQuote(cfg.batchFile),\n  '--run-id', shellQuote(cfg.runId),\n  noLlm,\n].join(' ').trim();\n\nreturn { json: { ...cfg, command } };"
+      },
+      "id": "0b177c3d-bad2-458e-a96d-586c1de5ec45",
+      "name": "Validate and Build Command",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -300,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "command": "={{ $json.command }}"
+      },
+      "id": "cf0c1ed6-4aed-427e-92af-ed0871aa64bb",
+      "name": "Run Existing Python Machine",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "let metrics;\ntry {\n  metrics = JSON.parse($json.stdout);\n} catch (error) {\n  throw new Error(`The Python machine did not return valid JSON metrics: ${error.message}`);\n}\n\nconst violations = [];\nif (metrics.send_mode !== false) violations.push('send_mode is not false');\nif (metrics.emails_sent !== 0) violations.push('emails_sent is not zero');\nif (metrics.drafts_written !== metrics.batch_size) violations.push('not every batch row produced a draft');\nif (metrics.claim_check_failures !== 0) violations.push('one or more drafts failed claim checking');\n\nif (violations.length) {\n  throw new Error(`Task 1 safety/quality gate failed: ${violations.join('; ')}`);\n}\n\nreturn {\n  json: {\n    status: 'PASS',\n    message: `Created ${metrics.drafts_written} draft-only messages. Sent 0.`,\n    runId: metrics.run_id,\n    batchFile: metrics.batch_file,\n    draftsWritten: metrics.drafts_written,\n    emailsSent: metrics.emails_sent,\n    claimCheckFailures: metrics.claim_check_failures,\n    rowsWithRiskFlags: metrics.rows_with_risk_flags,\n    generators: metrics.generators,\n    docPains: metrics.doc_pains,\n    outputLocations: {\n      drafts: `outbox/${metrics.run_id}/`,\n      evidence: `runs/${metrics.run_id}/`\n    },\n    rawMetrics: metrics\n  }\n};"
+      },
+      "id": "2e615ddf-cf9c-463e-82e3-27252c1c5fdc",
+      "name": "Safety Gate and Run Summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Task 1: n8n control plane\nThis workflow does not replace or modify the Python machine. It safely orchestrates the existing implementation, which remains the source of truth.\n\n**Default behavior:** deterministic drafts, no LLM, no sending.",
+        "height": 220,
+        "width": 420,
+        "color": 5
+      },
+      "id": "b8471bc2-d6c8-47a8-ad92-b0ba7913cc86",
+      "name": "About this workflow",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -760,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Before running\n1. Use self-hosted n8n.\n2. Mount this folder into n8n.\n3. Set `projectDirectory` to that in-container path.\n4. Keep `useLlm=false` for a reproducible run.\n\nThe Execute Command node may be disabled by administrators and is not available in n8n Cloud.",
+        "height": 260,
+        "width": 420,
+        "color": 7
+      },
+      "id": "d78a707f-c231-4cf5-876e-ab8aaaf99d18",
+      "name": "Setup note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        -220
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Run Manually": {
+      "main": [
+        [
+          {
+            "node": "Workflow Configuration",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workflow Configuration": {
+      "main": [
+        [
+          {
+            "node": "Validate and Build Command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate and Build Command": {
+      "main": [
+        [
+          {
+            "node": "Run Existing Python Machine",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run Existing Python Machine": {
+      "main": [
+        [
+          {
+            "node": "Safety Gate and Run Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "72eb2efc-46dc-49c6-9ccc-0fb980d484aa",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
+}
