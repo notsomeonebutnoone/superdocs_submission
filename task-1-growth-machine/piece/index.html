@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Close the gap between an agent draft and the document your customer can open.">
+  <title>Finish the document, not just the draft | SuperDocs</title>
+  <style>
+    :root { color-scheme: light dark; --bg:#f4f1ea; --ink:#171714; --muted:#625f58; --line:#b9b4aa; --accent:#d55d43; --panel:#ebe6dc; }
+    @media (prefers-color-scheme:dark) { :root { --bg:#181816; --ink:#f2efe8; --muted:#aaa69e; --line:#46433e; --accent:#ed795f; --panel:#23221f; } }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif; line-height:1.45; }
+    a { color:inherit; }
+    .wrap { width:min(1180px,calc(100% - 40px)); margin:auto; }
+    nav { height:68px; border-bottom:1px solid var(--line); display:flex; align-items:center; }
+    nav .wrap { display:flex; justify-content:space-between; align-items:center; }
+    .brand { font-weight:800; letter-spacing:-.04em; font-size:1.25rem; text-decoration:none; }
+    .nav-link { font:700 .73rem ui-monospace,monospace; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; }
+    .hero { min-height:calc(100dvh - 68px); display:grid; grid-template-columns:minmax(0,1.65fr) minmax(260px,.75fr); gap:7vw; align-items:center; padding:64px 0; }
+    .eyebrow { font:700 .72rem ui-monospace,monospace; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); }
+    h1 { max-width:850px; margin:18px 0 26px; font-size:clamp(3.5rem,8.3vw,7.8rem); line-height:.88; letter-spacing:-.075em; font-weight:800; }
+    .lede { max-width:620px; margin:0 0 34px; color:var(--muted); font-size:clamp(1.05rem,1.5vw,1.3rem); }
+    .cta { display:inline-block; padding:15px 20px; background:var(--ink); color:var(--bg); border:1px solid var(--ink); text-decoration:none; font-weight:800; transition:transform .15s ease,background .15s ease; }
+    .cta:hover { background:var(--accent); border-color:var(--accent); color:#fff; transform:translateY(-2px); }
+    .hero-art { min-height:430px; background:var(--panel); border:1px solid var(--line); position:relative; display:grid; place-items:center; overflow:hidden; }
+    .hero-art img { width:min(70%,310px); height:auto; position:relative; z-index:1; }
+    .hero-art::before { content:"AGENT → DOCUMENT"; position:absolute; inset:auto -10px 18px; font:800 clamp(1.4rem,3.2vw,3.6rem) ui-monospace,monospace; letter-spacing:-.08em; color:var(--line); white-space:nowrap; transform:rotate(-90deg) translateX(30%); transform-origin:right bottom; }
+    section { border-top:1px solid var(--line); padding:110px 0; }
+    h2 { margin:0 0 20px; max-width:800px; font-size:clamp(2.4rem,5vw,5rem); line-height:.98; letter-spacing:-.06em; }
+    .old-new { display:grid; grid-template-columns:1fr 1fr; margin-top:58px; border:1px solid var(--line); }
+    .old-new article { min-height:340px; padding:36px; }
+    .old-new article + article { border-left:1px solid var(--line); background:var(--panel); }
+    .label { font:700 .72rem ui-monospace,monospace; letter-spacing:.1em; color:var(--muted); }
+    .steps { list-style:none; padding:0; margin:42px 0 0; font-size:clamp(1.25rem,2vw,2rem); letter-spacing:-.025em; }
+    .steps li { padding:11px 0; border-bottom:1px solid var(--line); }
+    .workflows { display:grid; grid-template-columns:1.4fr .8fr .8fr; gap:0; margin-top:56px; border:1px solid var(--line); }
+    .workflow { min-height:250px; padding:28px; }
+    .workflow + .workflow { border-left:1px solid var(--line); }
+    .workflow strong { display:block; font-size:1.45rem; margin:70px 0 8px; letter-spacing:-.035em; }
+    .workflow p { color:var(--muted); margin:0; }
+    .proof { display:grid; grid-template-columns:1fr 1.25fr; gap:60px; align-items:start; }
+    .proof dl { margin:0; border-top:1px solid var(--line); }
+    .proof div { display:grid; grid-template-columns:1fr 2fr; gap:20px; padding:20px 0; border-bottom:1px solid var(--line); }
+    dt { font:700 .72rem ui-monospace,monospace; letter-spacing:.08em; text-transform:uppercase; }
+    dd { margin:0; color:var(--muted); }
+    .final { text-align:left; padding-bottom:140px; }
+    .final p { max-width:600px; color:var(--muted); font-size:1.15rem; }
+    footer { border-top:1px solid var(--line); padding:28px 0; color:var(--muted); font:600 .72rem ui-monospace,monospace; }
+    @media (max-width:760px) {
+      .hero { grid-template-columns:1fr; gap:42px; padding:48px 0; }
+      .hero-art { min-height:300px; }
+      section { padding:76px 0; }
+      .old-new,.workflows,.proof { grid-template-columns:1fr; }
+      .old-new article + article,.workflow + .workflow { border-left:0; border-top:1px solid var(--line); }
+      .workflow { min-height:200px; }
+      .workflow strong { margin-top:45px; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .cta { transition:none; } }
+  </style>
+</head>
+<body>
+  <nav><div class="wrap"><a class="brand" href="#top">SuperDocs</a><a class="nav-link" href="https://use.superdocs.app">Open the editor ↗</a></div></nav>
+  <main id="top" class="wrap">
+    <header class="hero">
+      <div><p class="eyebrow">For technical founders who already work with agents</p><h1>Your agent wrote it. Now finish the document.</h1><p class="lede">Move from a good draft to a reviewed, styled Word or PDF without the copy-paste repair loop.</p><a class="cta" href="https://use.superdocs.app">Edit a document</a></div>
+      <figure class="hero-art"><img src="https://superdocs.app/images/mascot-master-1200.png" width="1200" height="1200" alt="SuperDocs document mascot"></figure>
+    </header>
+    <section><h2>Chat solved the words. Not the handoff.</h2><div class="old-new"><article><span class="label">THE CURRENT LOOP</span><ol class="steps"><li>Draft in chat</li><li>Paste into Word</li><li>Repair the styles</li><li>Repeat after feedback</li></ol></article><article><span class="label">THE DOCUMENT LOOP</span><ol class="steps"><li>Open the real file</li><li>Ask for one precise edit</li><li>Review the change</li><li>Export the finished file</li></ol></article></div></section>
+    <section><h2>The founder documents that cannot stop at Markdown.</h2><div class="workflows"><article class="workflow"><span class="label">01</span><strong>Customer proposals</strong><p>Move scope and narrative without rebuilding the template.</p></article><article class="workflow"><span class="label">02</span><strong>Investor updates</strong><p>Keep the recurring structure while the story changes.</p></article><article class="workflow"><span class="label">03</span><strong>Security answers</strong><p>Revise the right section and preserve the rest.</p></article></div></section>
+    <section class="proof"><div><h2>Control stays visible.</h2><p class="lede">SuperDocs edits inside the document, then leaves a reviewable trail before anything customer-facing leaves your hands.</p></div><dl><div><dt>Precision</dt><dd>Target a section instead of regenerating the whole file.</dd></div><div><dt>Review</dt><dd>Inspect proposed changes before they become final.</dd></div><div><dt>Recovery</dt><dd>Use version history and per-message revert when an instruction misses.</dd></div><div><dt>Delivery</dt><dd>Export to Word or PDF with the document structure preserved.</dd></div><div><dt>Agent path</dt><dd>Connect an agent through MCP or the API when the workflow is ready.</dd></div></dl></section>
+    <section class="final"><h2>Do not paste the last mile.</h2><p>Bring the document your customer will actually open. Make the change there.</p><a class="cta" href="https://use.superdocs.app">Edit a document</a></section>
+  </main>
+  <footer><div class="wrap">Candidate landing-page experiment · claims limited to current product surfaces · no outreach sent</div></footer>
+</body>
+</html>

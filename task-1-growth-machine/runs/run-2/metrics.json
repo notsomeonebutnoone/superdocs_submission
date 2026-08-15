@@ -1,0 +1,23 @@
+{
+  "run_id": "run-2",
+  "started_at": "2026-08-06T08:32:23Z",
+  "batch_file": "data/batch-2.csv",
+  "batch_size": 8,
+  "drafts_written": 8,
+  "send_mode": false,
+  "emails_sent": 0,
+  "claim_check_failures": 0,
+  "rows_with_risk_flags": 0,
+  "generators": {
+    "deterministic": 8
+  },
+  "doc_pains": {
+    "security_questionnaire": 2,
+    "customer_proposal": 3,
+    "investor_update": 1,
+    "policy_pack": 1,
+    "launch_one_pager": 1
+  },
+  "llm_env_present": false,
+  "product_url": "https://use.superdocs.app"
+}

@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+
+# Unrelated nested checkout in this working folder.
+/hrms/
+
+# Original task briefs are local reference material, not submission artifacts.
+/SuperDocs-*.pdf
+
+# Identical sync/download duplicates. Keep legitimate batch-2.csv.
+/-2.gitignore
+**/*-2.md
+**/*-2.py
+**/*-2.html
+**/*-2.json
+**/*-2.pyc
+**/batch.snapshot-2.csv
+/task-1-growth-machine/data/batch-3.csv
+/task-1-growth-machine/data/batch-4.csv
+
+# Temporary validation/demo runs are regenerated locally.
+/task-1-growth-machine/outbox/verification-run-*/
+/task-1-growth-machine/runs/verification-run-*/
+/task-1-growth-machine/outbox/demo-run-*/
+/task-1-growth-machine/runs/demo-run-*/
