@@ -6,7 +6,7 @@ These are posting drafts, not claims that anything was published. Suggested cade
 
 **Disclosure:** I am a candidate for a growth role at SuperDocs, and I am building this as part of the process.
 
-Coding agents can produce a strong proposal draft. The awkward part starts one minute later: paste it into a branded document, repair the table and headings, route the changes for review, then do it again after feedback.
+Coding agents can produce a strong proposal draft. The awkward part starts immediately afterward: paste it into a branded document, repair the table and headings, route the changes for review, then do it again after feedback.
 
 Over the next ten days I am testing a small Proposal AI workflow on SuperDocs:
 
@@ -40,10 +40,10 @@ The risky moment is not generation. It is the last confident change before a cus
 
 The workflow is deliberately less magical:
 
-1. Fill the known sections from a structured brief.
-2. Ask for a targeted revision.
-3. Review the proposed change in context.
-4. Export only after approval.
+- Fill the known sections from a structured brief.
+- Ask for a targeted revision.
+- Review the proposed change in context.
+- Export only after approval.
 
 The product decision: optimize for controlled edits, not maximum autonomy. A proposal workflow earns trust by making the boundary visible.
 
@@ -51,7 +51,7 @@ The product decision: optimize for controlled edits, not maximum autonomy. A pro
 
 ## Post 4: the measured result
 
-The surrounding growth machine has now completed two fresh offline runs: sixteen synthetic company-and-role rows became sixteen draft messages, with zero sends, zero risk flags, and zero product-claim failures in the final runs.
+The surrounding growth machine completed both fresh offline runs: every synthetic input became a draft, sending remained disabled, and the final runs had no risk or product-claim flags.
 
 One useful failure came first. The claim checker mistook a prospect's public SOC2 context for a SuperDocs claim. I narrowed the check to the product section and added a regression test before rerunning both batches.
 

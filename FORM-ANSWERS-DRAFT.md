@@ -1,6 +1,6 @@
 # Submission form answer worksheet
 
-These are working drafts. Replace bracketed prompts with firsthand observations before submission.
+These are working drafts, not submission-ready answers. Replace every bracketed prompt with firsthand observations, enter the AI-built percentage, and personally re-check the public-site critique before pasting anything into the form.
 
 ## 1. What broke?
 
@@ -15,13 +15,6 @@ The authenticated product run is still required before this answer can be finali
 - **Evidence:** [screenshot, file, or reproducible steps]
 - **Reported through:** [in-app bug button or task email]
 
-Fresh-eyes issues visible on the public surfaces, to confirm against the live product:
-
-- The marketing page mixes a clear user promise (“AI edits inside the document”) with a very broad developer/platform story. A first-time visitor must choose among web app, API, MCP, white-label, autonomous agents, memory, images, and many document capabilities before seeing one complete end-to-end workflow.
-- The site contains several precise speed, usage, endpoint, developer-hour, and token-saving claims. These need prominent methodology or links to evidence so the strongest claims are independently understandable.
-- Deployment language mixes “now,” “soon,” and “on request” on the same path. A compact availability matrix would make shipped versus planned capabilities easier to distinguish.
-- The docs overview is strong at routing four user types, but the first screen could link one runnable end-to-end example for each path, including expected output, error handling, review, and export.
-
 ### My own machine
 
 My first recorded machine attempt produced a false positive: a prospect’s public SOC2 context was interpreted as a SuperDocs certification claim. I scoped the checker to the product-claim section, added a regression test, and reran both batches. This was a bug in my submission system, not in SuperDocs.
@@ -35,12 +28,14 @@ A finished-document event means the workspace completes an AI edit, reviews or a
 ## 3. Five features to build next, in order, and one thing to drop
 
 1. **First-edit reliability and recovery.** Make the first instruction consistently fast and successful, with clear retry state and actionable errors.
-2. **Export-fidelity regression coverage and visible guarantees.** Test representative DOCX structures and show users what was preserved or degraded before download.
+2. **Export-fidelity regression coverage and a visible fidelity report.** Test representative DOCX structures and show users what was preserved or degraded before download.
 3. **Review and change provenance.** Make section-level diffs, source references, accept/reject, and per-message revert unmistakable for high-stakes documents.
 4. **Workflow-sized MCP experiences.** Ship curated tool subsets, tested recipes, and safer approval boundaries for Claude Code, Cursor, VS Code, and Codex rather than exposing every tool equally.
 5. **Reusable organization templates and policy context.** Make a team’s approved document shapes, terminology, and reusable source material easy to govern and apply.
 
 **Drop or defer:** broad document-management/archive positioning. SuperDocs is strongest as the editing and execution layer. Competing as a general DMS would blur the wedge and add permissions, retention, and governance complexity before the core edit-review-export loop is undeniable.
+
+**Frictions and bugs to fix immediately:** Replace this line after the authenticated run with the confirmed issues from answer 1, ordered by user impact. Do not infer product bugs from the task brief alone.
 
 ## 4. How would you make the entire GTM operation run itself?
 
@@ -54,6 +49,8 @@ I would build one observable system with four loops, not a collection of disconn
 The practical stack can start with scheduled Python or n8n workflows, a small relational store, product analytics, a content/research queue, and evaluation jobs. Every run should be resumable and idempotent. The first failures at scale will be stale research, overconfident personalization, duplicated work, claim drift, and review overload, so source freshness, deterministic IDs, claim allowlists, sample-based quality scoring, and queue limits belong in version one.
 
 ## 5. What would you change on superdocs.app and docs.superdocs.app?
+
+Draft research basis: the public pages at `https://superdocs.app` and `https://docs.superdocs.app` were re-read on 2026-08-15. The candidate should personally re-check them before submission and remove any point that no longer matches the live pages.
 
 ### Website
 
@@ -69,7 +66,7 @@ The practical stack can start with scheduled Python or n8n workflows, a small re
 - Add a prominent “production checklist” covering idempotency, asynchronous jobs, retries, rate limits, secret handling, human approval, and destructive/revert operations.
 - Publish a capability-status reference that maps web app, REST, and MCP parity and identifies preview or request-only features.
 - Put a minimal workflow-oriented MCP tool set before the full tool catalog so agents select tools reliably.
-- Add tested examples for a complete document lifecycle rather than focusing only on the first edit.
+- Add one curated, tested example for the complete document lifecycle alongside the existing quickstarts: create or upload, edit, review, revert, export, and reopen.
 
 ## Final form-only fields
 

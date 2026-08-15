@@ -43,7 +43,7 @@ Open-list extras and inventions are voluntary. Depth beats breadth.
 | Work | Where it lands |
 |------|----------------|
 | This growth machine + research | This private repo (invite o-kadam) |
-| SuperDocs product builds / extras | PR into `github.com/superdocsapp/superdocs-builds` |
+| Selected catalog build / extras | Follow each card's `WHERE THE FINISHED WORK GOES` line exactly: public-repository PR, submission form/Drive, or own channel |
 | Videos, posts, forms answers | Google Form only (wait for form email) |
 
 Email `hello@superdocs.app` for questions and bugs — **not** for submission attachments.
