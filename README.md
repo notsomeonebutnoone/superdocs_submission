@@ -1,5 +1,9 @@
 # doctask — SuperDocs growth round
 
+## Demo video
+
+[Watch the final demo on Google Drive](https://drive.google.com/file/d/1LSYa400C1j5kwrwHbQSgWn_HPv9AMvAs/view?usp=sharing)
+
 Private working repository for the SuperDocs GTM / Growth Engineer task (Round 2).
 
 > **Bright line:** nothing in this repo is sent to any real person or company. Outreach drafts are synthetic-run artifacts only. SuperDocs does all real outreach themselves.
