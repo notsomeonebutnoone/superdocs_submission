@@ -36,17 +36,18 @@ This checklist is derived from the original growth-task brief. The deadline is i
   - Demonstrate one-message revert while earlier accepted work remains.
   - No numbers or counts in the clip.
   - Never publish publicly. Upload only through the submission form, plus an unlisted link if available.
-- [ ] Record the Task 4 demo using `task-4-demo-and-writeup/DEMO-SCRIPT.md`.
+- [x] Recorded the Task 4 demo using `task-4-demo-and-writeup/DEMO-SCRIPT.md`.
   - Aim for about three minutes, five minutes maximum.
   - Show both machine runs and the assigned builds.
   - Keep the separate feature clip out of the demo sequence except as a referenced deliverable.
   - Use the candidate’s real voice. Show only sanitized run output needed for the demonstration, with no shell history, environment values, credentials, or private material.
   - Upload the video file through the form and add an unlisted link if available.
-- [ ] Review and personalize `task-4-demo-and-writeup/ONE-PAGE.md` so it accurately reflects the final authenticated build and published-post status.
+  - Demo video: https://drive.google.com/file/d/1LSYa400C1j5kwrwHbQSgWn_HPv9AMvAs/view?usp=sharing
+- [x] Reviewed and personalized `task-4-demo-and-writeup/ONE-PAGE.md` to reflect the final authenticated build and published-post status.
 
 ## Form package
 
-- [ ] Finalize the five answers in `FORM-ANSWERS-DRAFT.md`.
+- [x] Finalized the five answers in `FORM-ANSWERS-DRAFT.md`.
 - [ ] Add every real SuperDocs bug or rough edge observed. Do not present the machine’s own claim-check bug as a SuperDocs product bug.
 - [ ] State the approximate AI-built percentage and how the candidate directed the work.
 - [ ] State honestly what works and what remains incomplete.
@@ -62,8 +63,8 @@ This checklist is derived from the original growth-task brief. The deadline is i
 - [x] Machine tests pass locally.
 - [x] A fresh local re-run on 2026-08-15 reproduced eight drafts per batch, zero sends, zero claim-check failures, and zero risk-flagged rows. The commands and observed metrics are recorded in `task-1-growth-machine/runs/VERIFICATION-2026-08-15.md`; canonical run artifacts remain `run-1/` and `run-2/`.
 - [x] Reviewed the tracked tree during the readiness pass: no `hrms/`, original task PDFs, duplicate `*-2.*` files, secrets, or temporary validation runs are tracked.
-- [ ] Create a private repository with a neutral name such as `doctask-<name>`.
-- [ ] Push Task 1 and supporting research to the private repository.
+- [x] Created the private repository `notsomeonebutnoone/superdocs_submission`.
+- [x] Pushed Task 1 and supporting research to the private repository.
 - [ ] Invite GitHub user `o-kadam` as collaborator.
 - [ ] Open any required public SuperDocs build PR in the destination specified by the chosen card.
 

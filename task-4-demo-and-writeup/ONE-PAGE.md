@@ -2,6 +2,8 @@
 
 **Submission one-page — SuperDocs GTM / Growth Engineer task**
 
+**Demo video:** https://drive.google.com/file/d/1LSYa400C1j5kwrwHbQSgWn_HPv9AMvAs/view?usp=sharing
+
 ## The bet
 
 SuperDocs should begin with a behavior, not an industry: seed-stage technical founders and founding engineers who already use coding agents every day but still personally finish proposals, investor updates, security questionnaires, and launch one-pagers. Their agent can produce words. The workflow breaks when those words must become a reviewed, branded document that another company can open.

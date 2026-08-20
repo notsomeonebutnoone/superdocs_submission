@@ -68,7 +68,8 @@ Research basis: the public pages at `https://superdocs.app` and `https://docs.su
 
 ## Final form-only fields
 
+- **Demo video:** https://drive.google.com/file/d/1LSYa400C1j5kwrwHbQSgWn_HPv9AMvAs/view?usp=sharing
 - **Approximate AI-built percentage:** Approximately 85%. AI produced most of the initial research synthesis, implementation, tests, copy variants, and documentation. I directed the audience choice, constraints, evidence standard, authenticated product experiments, publishing decisions, review judgments, recordings, and final claims.
 - **How I directed AI:** I set the audience, constraints, product-claim ceiling, channel choice, acceptance criteria, and cuts; used AI for research synthesis, implementation, tests, copy variants, and verification; and retained human responsibility for authenticated product use, publishing, voice recordings, and final claims.
 - **What works:** The offline machine and its reproducible two-batch runs; deterministic safety and claim checks; the responsive audience landing page; honest measurement plan; agent-ecosystem map; ten real-company use-case hypotheses; authenticated weakest-section experiment; review and export verification; and all five published build-in-public posts. The assigned card is **Weakest-section critique engine**.
-- **What remains incomplete:** Final submission packaging: upload or attach the human-voice recording links, create or confirm the private repository remote, invite `o-kadam`, and submit the completed Google Form. No real-company outreach was performed, so demand metrics remain intentionally unproven.
+- **What remains incomplete:** Final submission packaging: add the separate per-message-revert clip link, invite `o-kadam` to the private repository, and submit the completed Google Form. No real-company outreach was performed, so demand metrics remain intentionally unproven.

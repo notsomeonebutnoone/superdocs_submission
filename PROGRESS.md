@@ -38,8 +38,8 @@
 - [x] Ran two fresh constrained-ranking replications. The result was unstable: original = Timeline, replication A = Next Steps, replication B = Current State. Run B also inverted the requested display order.
 - [x] Published the five-post series and recorded all links.
 - [ ] Record the private per-message-revert clip with the candidate's real voice.
-- [ ] Record the approximately three-minute demo with the candidate's real voice.
-- [ ] Create the private GitHub remote, commit the work, invite `o-kadam`, and submit the repository link.
+- [x] Recorded the approximately three-minute demo with the candidate's real voice: https://drive.google.com/file/d/1LSYa400C1j5kwrwHbQSgWn_HPv9AMvAs/view?usp=sharing
+- [ ] Private GitHub repository is created, committed, and pushed; invite `o-kadam` and submit the repository link.
 
 ### Open assumptions
 
@@ -75,6 +75,6 @@
 - [x] Completed the authenticated build and captured genuine failure, constrained-ranking, targeted-rewrite, and review evidence.
 - [x] Published all five posts and recorded their dates and links. Posts 1 through 3 were published on August 17, 2026; Posts 4 and 5 were published on August 19, 2026.
 - [ ] Record the private 15–30 second per-message-revert clip with the candidate’s real voice.
-- [ ] Record the Task 4 demo with the candidate’s real voice and update the one-page write-up to final status.
-- [ ] Finalize firsthand bug notes, form answers, AI-use estimate, and honest completion report.
-- [ ] Create the private remote, invite `o-kadam`, open any build PR required by the selected card, and submit every destination through the Google Form.
+- [x] Recorded the Task 4 demo with the candidate’s real voice and added the share link to the final package.
+- [x] Finalized firsthand bug notes, form answers, AI-use estimate, and honest completion report.
+- [ ] Private remote is created and pushed; invite `o-kadam`, open any build PR required by the selected card, and submit every destination through the Google Form.
