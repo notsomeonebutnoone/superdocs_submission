@@ -8,7 +8,7 @@
 - **Why this audience (and why it can be wrong):** Specific enough to name ten this week via public launch signals. Wrong if they already have an ops hire doing docs, or if their docs never leave Markdown. Defended because the agent→document gap is visible in how they already work.
 - **Channel:** One outbound personalization machine (human research → validate/enrich → draft). Not multi-channel. Depth over sketches.
 - **Piece:** Audience landing page that sells the *document loop* pain (not a feature laundry list), plus the machine’s cold-email drafts as the running artifact.
-- **Build-in-public card:** Document building a **Proposal AI mini-workflow on SuperDocs** (catalog-aligned vertical: personalized proposals from a brief + template) live in five posts. Ties T1 audience, T2a, and product surfaces (chat, templates, review, export).
+- **Build-in-public card:** Document the exact Open Task List card **Weakest-section critique engine** live in five posts. The synthetic proposal supplies the test document; the workflow ranks five sections, rewrites the weakest after human review, and verifies document integrity.
 - **Clip feature:** Per-message revert (assigned).
 - **Repo layout:** Folders by task; machine is plain Python, no paid tooling required.
 
@@ -34,8 +34,9 @@
 
 ### Human-only blockers before submission
 
-- [ ] Run the Proposal AI acceptance test in an authenticated SuperDocs session and capture synthetic evidence.
-- [ ] Publish the five-post series over the required cadence, recording links only after publication.
+- [x] Ran the initial weakest-section critique experiment in authenticated SuperDocs and captured synthetic failure, success, rewrite, and review evidence.
+- [x] Ran two fresh constrained-ranking replications. The result was unstable: original = Timeline, replication A = Next Steps, replication B = Current State. Run B also inverted the requested display order.
+- [x] Published the five-post series and recorded all links.
 - [ ] Record the private per-message-revert clip with the candidate's real voice.
 - [ ] Record the approximately three-minute demo with the candidate's real voice.
 - [ ] Create the private GitHub remote, commit the work, invite `o-kadam`, and submit the repository link.
@@ -66,12 +67,13 @@
 
 ### Critical clarification before publishing
 
-- [ ] Name the exact Open Task List card used by the five-post build and ensure the finished artifact meets that card. “Proposal AI mini-workflow” currently describes a catalog family, not an exact card title.
+- [x] Exact Open Task List card confirmed: **Weakest-section critique engine** (page 417). The five-section ranking, targeted Timeline rewrite, review evidence, and integrity check map directly to the card.
+- [x] Ran the constrained ranking twice in fresh authenticated sessions. The weakest-section result was not stable; the limitation is recorded in Post 4.
 
 ### Remaining human-only work
 
-- [ ] Complete the authenticated build and capture genuine failure/result evidence.
-- [ ] Publish five posts over ten days and record their dates/links.
+- [x] Completed the authenticated build and captured genuine failure, constrained-ranking, targeted-rewrite, and review evidence.
+- [x] Published all five posts and recorded their dates and links. Posts 1 through 3 were published on August 17, 2026; Posts 4 and 5 were published on August 19, 2026.
 - [ ] Record the private 15–30 second per-message-revert clip with the candidate’s real voice.
 - [ ] Record the Task 4 demo with the candidate’s real voice and update the one-page write-up to final status.
 - [ ] Finalize firsthand bug notes, form answers, AI-use estimate, and honest completion report.

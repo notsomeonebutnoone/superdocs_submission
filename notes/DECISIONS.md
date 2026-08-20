@@ -62,4 +62,4 @@ Only promise what SuperDocs does today per product surfaces we verified:
 
 ## Build-in-public subject
 
-Five posts documenting a **Proposal AI workflow on SuperDocs** (brief + template → section edits → review → export). Catalog family: vertical mini-app / proposal AI. Band S1–S2 surfaces: chat, templates, review, export.
+Five posts documenting the exact Open Task List card **Weakest-section critique engine** (page 417): fixed evaluation goal → ranked sections with reasons → human check → weakest-section rewrite → review → integrity check. The Atlas Field Systems proposal is the synthetic test document. The earlier “Proposal AI workflow” label was too broad and has been retired.

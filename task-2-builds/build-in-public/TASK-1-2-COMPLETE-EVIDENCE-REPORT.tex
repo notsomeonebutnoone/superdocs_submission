@@ -1,0 +1,393 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+
+\definecolor{Ink}{HTML}{172033}
+\definecolor{Blue}{HTML}{3157D5}
+\definecolor{Soft}{HTML}{F2F5FA}
+\definecolor{Muted}{HTML}{5D6678}
+\definecolor{Good}{HTML}{237A3B}
+\definecolor{Warn}{HTML}{A66516}
+\definecolor{Bad}{HTML}{A43B3B}
+\hypersetup{colorlinks=true,linkcolor=Blue,urlcolor=Blue}
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\fancyhf{}
+\lhead{Task 1--2 complete evidence report}
+\rhead{SuperDocs growth submission}
+\cfoot{\thepage}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=18pt,itemsep=3pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=20pt,itemsep=4pt,topsep=3pt}
+\captionsetup{font=small,labelfont=bf,justification=centering}
+\newcommand{\pathcode}[1]{\texttt{#1}}
+\newcommand{\verified}{\textcolor{Good}{\textbf{VERIFIED}}}
+\newcommand{\observed}{\textcolor{Warn}{\textbf{OBSERVED}}}
+\newcommand{\pending}{\textcolor{Bad}{\textbf{PENDING}}}
+\newcommand{\evidencebox}[1]{\begin{center}\colorbox{Soft}{\parbox{0.92\textwidth}{#1}}\end{center}}
+
+\title{\vspace{-14mm}\textbf{Task 1 and Task 2: Complete Evidence Report}\\[5pt]\large Verified growth-machine run, SuperDocs proposal experiment, screenshots, findings, and remaining work}
+\author{Submission evidence compilation}
+\date{15 August 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\evidencebox{\textbf{Outcome.} Task 1 ran successfully through the repaired n8n control plane. The repository records eight inputs, eight draft outputs, zero emails sent, zero final claim-check failures, and zero risk-flagged rows. Task 2 then tested a proposal-review workflow in SuperDocs. The first broad request failed to return the requested ranking and later produced an inaccurate change summary. A narrower retry succeeded, identified Timeline as the weakest section, and led to two reviewed Timeline changes.}
+
+\vfill
+\begin{tabularx}{\textwidth}{>{\bfseries}p{0.28\textwidth} X}
+\toprule
+Evidence area & Included in this edition \\
+\midrule
+Task 1 result & Verified n8n metrics, document-pain distribution, and two new successful workflow screenshots. \\
+Task 2 artifact & Detailed synthetic proposal, protected clauses, and its connection to the Task 1 insight. \\
+SuperDocs test & Failure trail, unchanged-text verification, successful ranking, targeted revision, and acceptance review. \\
+Screenshot record & Eight current screenshots embedded beside the findings they support. No obsolete n8n template screenshot is included. \\
+Readiness & Supported conclusions, limitations, public-post evidence map, and final actions. \\
+\bottomrule
+\end{tabularx}
+
+\vfill
+\textcolor{Muted}{The report separates repository-verified facts from screenshot observations. It does not convert synthetic inputs into customer claims or infer results that the available evidence cannot prove.}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Purpose and evidence standard}
+
+This report consolidates the work completed for Task 1 and the proposal experiment performed for Task 2. It replaces the earlier report in full. The narrative follows the actual sequence of work, and the screenshots appear in the sections where they matter.
+
+Three labels define the strength of each claim:
+
+\begin{tabularx}{\textwidth}{>{\bfseries}p{0.21\textwidth} p{0.17\textwidth} X}
+\toprule
+Evidence type & Label & Meaning \\
+\midrule
+Repository artifact & \verified & A metric, file, output folder, or normalized text comparison was inspected directly. \\
+Screenshot evidence & \observed & The interface visibly supports the stated event, but the screenshot alone does not prove hidden state or whole-file integrity. \\
+Missing closure item & \pending & A final export, complete post-edit text, or publication URL has not yet been supplied. \\
+\bottomrule
+\end{tabularx}
+
+The screenshots document user-visible behavior. Quantitative claims come from stored files, not from visual inference.
+
+\section{Task 1: growth machine and n8n execution}
+
+\subsection{System purpose}
+
+Task 1 is a draft-only growth machine for seed-stage technical founders and founding engineers at small B2B product companies. Human research supplies structured CSV rows. The Python system validates each row, maps a document pain to an angle, creates a claim-checked Markdown draft, and records run evidence. Sending remains hard-disabled.
+
+The n8n workflow is a control plane around that tested Python implementation. It does not duplicate or replace the source logic. Its five operational stages are manual trigger, configuration, command validation, Python execution, and a final safety gate.
+
+\subsection{Successful n8n result}
+
+The new screenshots show the repaired workflow after execution. Each operational node is green, and the connectors show one item moving through the chain. Figures~\ref{fig:n8n-success-one} and~\ref{fig:n8n-success-two} replace the obsolete pre-fix template image used in the earlier report.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{../../Screenshot 2026-08-15 153933.png}
+\caption{New Task 1 success screenshot. All five operational nodes show green completion states, and one item reaches the Safety Gate and Run Summary node.}
+\label{fig:n8n-success-one}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{../../Screenshot 2026-08-15 155255.png}
+\caption{Second supplied view of the successful n8n workflow. The screenshot confirms a completed visual path; stored metrics provide the numerical result.}
+\label{fig:n8n-success-two}
+\end{figure}
+
+\subsection{Verified run metrics}
+
+The stored \pathcode{n8n-run-1} evidence contains a batch snapshot, metrics, per-row results, and a human-readable summary. Eight matching Markdown drafts appear in its corresponding outbox folder.
+
+\begin{tabularx}{\textwidth}{>{\bfseries}X r X}
+\toprule
+Metric & Result & Meaning \\
+\midrule
+Batch size & 8 & Eight synthetic prospect rows entered the machine. \\
+Drafts written & 8 & Every accepted row produced a draft; completion was 100\%. \\
+Emails sent & 0 & The no-send boundary held. \\
+Claim-check failures & 0 & No final output failed the product-claim checker. \\
+Rows with risk flags & 0 & No accepted row retained a recorded risk flag. \\
+Generator mode & 8 deterministic & The run used reproducible, non-LLM generation. \\
+\bottomrule
+\end{tabularx}
+
+\evidencebox{\verified\quad The visible successful workflow is corroborated by \pathcode{metrics.json}, \pathcode{results.json}, \pathcode{SUMMARY.md}, and eight output drafts. The record states \pathcode{send\_mode=false} and \pathcode{emails\_sent=0}.}
+
+\subsection{What Task 1 found}
+
+Customer proposals were the largest pain category in the n8n run: four of eight rows. Across both canonical batches, proposals accounted for seven of sixteen rows.
+
+\begin{tabularx}{\textwidth}{X r r}
+\toprule
+Document pain & n8n run count & Share \\
+\midrule
+Customer proposal & 4 & 50.0\% \\
+Security questionnaire & 1 & 12.5\% \\
+Investor update & 1 & 12.5\% \\
+Policy pack & 1 & 12.5\% \\
+Launch one-pager & 1 & 12.5\% \\
+\bottomrule
+\end{tabularx}
+
+This distribution justified using a proposal as the Task 2 test artifact. It does not establish market demand, response rates, or customer outcomes. No outreach occurred.
+
+\section{Task 2: proposal artifact and experiment design}
+
+\subsection{Controlled proposal}
+
+The test document is a synthetic Workflow Modernization Proposal prepared for Atlas Field Systems by Northstar Workflow Studio. Its 1,910 words cover the executive summary, objectives, current state, three-phase approach, six deliverables, roles, working principles, six-week Timeline, acceptance criteria, assumptions, scope limits, risks, change control, pricing, terms, and next steps.
+
+The source files are:
+
+\begin{itemize}
+  \item \pathcode{atlas-field-systems-proposal.md};
+  \item \pathcode{atlas-field-systems-detailed-proposal.docx}.
+\end{itemize}
+
+The scenario is fictional. Task 1 selected the problem category; it did not discover Atlas Field Systems or produce this proposal as a customer result.
+
+\subsection{Protected content}
+
+Two clauses created a precise integrity test.
+
+\evidencebox{\textbf{Pricing:} Pricing remains unchanged from the approved template.}
+
+\evidencebox{\textbf{Terms:} This proposal does not modify the legal terms in the approved template. Any change to scope, timeline, pricing, or legal terms requires written approval from both parties.}
+
+The prompt also prohibited invented facts about systems, staffing, reporting volume, compliance, financial impact, and performance.
+
+\subsection{Evaluation goal}
+
+The test asked SuperDocs to rank sections against one approval goal: make the proposal concise, credible, and easy for an operations buyer to approve. The intended flow was analysis first, one section-level revision second, human review third, and export last.
+
+\section{First interaction: failure to deliver the requested ranking}
+
+The initial prompt requested a weakest-to-strongest ranking of every section, grounded in the document, with no edits. SuperDocs first returned a safety/rephrase response. A repeat produced several progress updates but no ranking, as Figure~\ref{fig:ranking-failure} shows.
+
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.74\textheight,keepaspectratio]{../../Screenshot 2026-08-15 152045.png}
+\caption{Initial ranking failure. The first response asks for a rephrase; the retry supplies progress statements but still does not answer the ranking request.}
+\label{fig:ranking-failure}
+\end{figure}
+
+\evidencebox{\observed\quad The broad request failed at instruction completion. It did not return the requested ordered analysis.}
+
+\section{Second failure: a change summary without actual changes}
+
+After the stalled ranking, the user requested a breakdown of changes. SuperDocs acknowledged that no before/after diff was available, then generated a long summary describing alleged revisions across the proposal. Figure~\ref{fig:false-summary-one} shows the beginning; Figure~\ref{fig:false-summary-two} contains the continuation.
+
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.74\textheight,keepaspectratio]{../../Screenshot 2026-08-15 152102.png}
+\caption{Beginning of the ungrounded change summary. The response first states that no before/after diff is available, then describes sections as updated or tightened.}
+\label{fig:false-summary-one}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.74\textheight,keepaspectratio]{../../Screenshot 2026-08-15 152111.png}
+\caption{Continuation of the summary, including claims about Timeline, protected Pricing and Terms, and other sections.}
+\label{fig:false-summary-two}
+\end{figure}
+
+The full document text was then pasted back and compared with the original source. Markdown heading markers, bullet markers, bold markers, and whitespace were normalized before comparison.
+
+\begin{tabularx}{\textwidth}{>{\bfseries}X r r}
+\toprule
+Check & SuperDocs text & Original source \\
+\midrule
+Normalized words & 1,910 & 1,910 \\
+Normalized full text & \multicolumn{2}{c}{Identical} \\
+Pricing clause & \multicolumn{2}{c}{Exact match} \\
+Terms clause & \multicolumn{2}{c}{Exact match} \\
+\bottomrule
+\end{tabularx}
+
+\evidencebox{\verified\quad At this checkpoint, the document had not changed. The response described revisions that were absent from the actual text.}
+
+\section{Prompt correction and successful ranking}
+
+The retry reduced the scope to exactly five named sections. It prohibited editing and summarizing, demanded a numbered order, required one grounded reason per section, and asked the system to name only the weakest section at the end.
+
+This narrower contract succeeded. Figure~\ref{fig:ranking-success} records the complete response.
+
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.76\textheight,keepaspectratio]{../../Screenshot 2026-08-15 152255.png}
+\caption{Successful constrained ranking. SuperDocs ranked all five requested sections and named Timeline as weakest.}
+\label{fig:ranking-success}
+\end{figure}
+
+\begin{tabularx}{\textwidth}{>{\bfseries}p{0.09\textwidth} p{0.24\textwidth} X}
+\toprule
+Rank & Section & Returned assessment \\
+\midrule
+1 & Timeline & Weakest; exact dates and milestones remained subject to discovery. \\
+2 & Executive Summary & Clear but high-level and cautious. \\
+3 & Next Steps & Practical but generic. \\
+4 & Proposed Approach & Structured and credible through its three phases. \\
+5 & Current State & Strongest because it stays within confirmed facts. \\
+\bottomrule
+\end{tabularx}
+
+The result followed the requested format. Its Timeline reasoning remained imperfect because the source already contained weekly milestones, even though calendar dates were intentionally unresolved. The output was useful, not infallible.
+
+\section{Targeted Timeline revision and human review}
+
+SuperDocs was asked to rewrite only Timeline. The instruction preserved the six-week duration and existing weekly activities, requested purpose/output/approval framing, prohibited invented facts, protected Pricing and Terms, and required review before application.
+
+The proposed wording improved decision structure. A review caught one weakened control sentence before acceptance, so the final instruction restored the original exact wording: ``The six-week duration will not change without written agreement from both parties.''
+
+Figure~\ref{fig:tracked-text} shows the in-document tracked revision. Removed wording appears red; additions appear green.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{../../Screenshot 2026-08-15 152702.png}
+\caption{Tracked Timeline revision in the document. The first weekly heading remains visible below the edited introduction.}
+\label{fig:tracked-text}
+\end{figure}
+
+Figure~\ref{fig:accepted-review} shows the review panel. Both visible edits are marked Accepted: the heading changes from Timeline to Project Timeline, and the introductory paragraph is rewritten.
+
+\begin{figure}[H]
+\centering
+\includegraphics[height=0.78\textheight,keepaspectratio]{../../Screenshot 2026-08-15 152711.png}
+\caption{Review panel showing two changes reviewed and both accepted. The screenshot preserves the before/after text for each visible edit.}
+\label{fig:accepted-review}
+\end{figure}
+
+\evidencebox{\observed\quad The interface shows two accepted Timeline edits. The screenshot does not expose the entire post-edit file, so final whole-document integrity still requires an exported file or complete final text.}
+
+\section{Consolidated results}
+
+\begin{tabularx}{\textwidth}{>{\bfseries}p{0.31\textwidth} p{0.18\textwidth} X}
+\toprule
+Test & Result & Evidence \\
+\midrule
+Task 1 n8n execution & Passed & New green-node screenshots plus repository metrics and eight draft files. \\
+Draft completion & 8/8 & Stored \pathcode{n8n-run-1} metrics. \\
+Send safety & Passed & Zero emails sent; send mode false. \\
+Claim safety & Passed & Zero final claim-check failures. \\
+Broad ranking instruction & Failed & Rephrase response and unresolved progress trail. \\
+Change-state grounding & Failed & Summary claimed changes; normalized text remained identical. \\
+Constrained ranking & Passed & Five ordered sections with reasons and one named weakest section. \\
+Pre-edit integrity & Passed & 1,910 normalized words on both sides; full text and protected clauses matched. \\
+Targeted review flow & Passed visually & Two visible Timeline edits reviewed and accepted. \\
+Final exported integrity & Pending & No complete final export has been inspected. \\
+\bottomrule
+\end{tabularx}
+
+One of two ranking formulations returned the requested output. That observation describes this small experiment only. It is not a product reliability rate.
+
+\section{What the evidence supports}
+
+\subsection{Supported conclusions}
+
+\begin{itemize}
+  \item The repaired n8n workflow completed the full Task 1 control path.
+  \item Stored evidence confirms eight drafts, zero sends, zero claim-check failures, and zero risk-flagged rows.
+  \item Customer proposals were the largest document-pain category in the available Task 1 batches.
+  \item The first SuperDocs interaction exposed a genuine instruction-following failure.
+  \item The later change summary was inconsistent with the unchanged document text.
+  \item A constrained prompt produced a complete section ranking.
+  \item SuperDocs exposed targeted Timeline edits through a human review surface.
+  \item The user accepted both visible edits after preserving the written-agreement control.
+\end{itemize}
+
+\subsection{Claims that remain out of bounds}
+
+\begin{itemize}
+  \item The evidence does not establish customer adoption, outreach response, revenue, or time saved.
+  \item The Atlas Field Systems scenario is synthetic, not a real account or Task 1 prospect.
+  \item Screenshots cannot prove that every hidden or off-screen section remained unchanged after acceptance.
+  \item Export formatting and complete post-edit integrity remain unverified.
+  \item Two prompt attempts cannot support a general reliability percentage.
+\end{itemize}
+
+\section{Five-post evidence sequence}
+
+\begin{tabularx}{\textwidth}{>{\bfseries}p{0.08\textwidth} p{0.25\textwidth} X}
+\toprule
+Post & Story function & Evidence to use \\
+\midrule
+1 & Plan and disclosure & Explain the section-critique test, synthetic proposal, success criteria, and candidate affiliation. \\
+2 & First breakage & Use Figure~\ref{fig:ranking-failure}; describe the incomplete ranking response. \\
+3 & Decision changed & Explain why the prompt was narrowed to five sections with an analysis-only output contract. \\
+4 & Measured result & Report 1,910-word pre-edit integrity, one failed broad attempt, and one successful constrained attempt. \\
+5 & Finished build & Use Figures~\ref{fig:ranking-success}, \ref{fig:tracked-text}, and \ref{fig:accepted-review}; add the verified final export when available. \\
+\bottomrule
+\end{tabularx}
+
+Publish the posts across the required cadence. Record dates and URLs only after they exist.
+
+\section{Remaining work}
+
+\begin{enumerate}
+  \item Export the accepted proposal from SuperDocs as DOCX or PDF.
+  \item Re-open it and inspect heading hierarchy, lists, pagination, and the full Timeline.
+  \item Compare final Pricing and Terms with the protected strings in this report.
+  \item Compare all non-Timeline sections with the original source.
+  \item Save the final export and comparison result beside the build evidence.
+  \item Publish the five-post series and record genuine URLs.
+  \item Include a short Task 2 segment in the Task 4 demo; no separate Task 2 video is required.
+\end{enumerate}
+
+\section{Recommended completion statement}
+
+\evidencebox{Task 1 ran successfully through n8n and produced eight draft-only messages with zero sends and zero final claim-check failures. Task 2 used the strongest Task 1 pain category, customer proposals, to test section critique and targeted revision in SuperDocs. The first broad ranking request failed, and a later summary described changes that had not occurred. A constrained five-section retry succeeded. SuperDocs then proposed a targeted Timeline update, and two visible changes were reviewed and accepted. Final whole-file export verification remains open.}
+
+\appendix
+\section{Prompts preserved for reproduction}
+
+\subsection{Constrained ranking}
+
+\evidencebox{Do not edit, rewrite, summarize, or propose changes to the document. Perform analysis only. Review exactly these five sections: Executive Summary, Current State, Proposed Approach, Timeline, and Next Steps. Rank them from 1, weakest, to 5, strongest against this goal: concise, credible, and easy for an operations buyer to approve. For each section, provide one reason grounded in its current wording. End by naming only the weakest section. Do not modify the document.}
+
+\subsection{Targeted Timeline revision}
+
+\evidencebox{Rewrite only the Timeline section so it is more decision-ready for an operations buyer. Preserve the six-week duration and the existing week-by-week activities. Clarify the purpose, output, and approval point for each stage. Do not invent calendar dates, costs, systems, performance targets, or customer facts. Do not modify any other section. Pricing and Terms must remain exactly unchanged. Present the proposed Timeline revision for review before applying it.}
+
+\subsection{Final correction}
+
+\evidencebox{Apply this proposed Timeline revision only, but replace the final sentence with the original exact wording: ``The six-week duration will not change without written agreement from both parties.'' Do not change any other section. Keep Pricing and Terms exactly unchanged.}
+
+\section{Evidence inventory}
+
+\begin{tabularx}{\textwidth}{>{\bfseries}p{0.31\textwidth} X}
+\toprule
+Evidence & Location or status \\
+\midrule
+n8n metrics & \pathcode{task-1-growth-machine/runs/n8n-run-1/metrics.json} \\
+n8n summary & \pathcode{task-1-growth-machine/runs/n8n-run-1/SUMMARY.md} \\
+n8n drafts & \pathcode{task-1-growth-machine/outbox/n8n-run-1/} \\
+Proposal source & \pathcode{atlas-field-systems-proposal.md} \\
+Proposal DOCX & \pathcode{atlas-field-systems-detailed-proposal.docx} \\
+New Task 1 screenshots & Figures~\ref{fig:n8n-success-one} and~\ref{fig:n8n-success-two} \\
+SuperDocs screenshots & Figures~\ref{fig:ranking-failure}--\ref{fig:accepted-review} \\
+Embedded screenshots & Eight current images; obsolete n8n screenshots excluded \\
+Final exported proposal & \pending \\
+Published post URLs & \pending \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

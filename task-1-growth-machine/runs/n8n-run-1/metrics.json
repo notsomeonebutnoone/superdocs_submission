@@ -1,0 +1,23 @@
+{
+  "run_id": "n8n-run-1",
+  "started_at": "2026-08-15T08:34:35Z",
+  "batch_file": "data/batch-1.csv",
+  "batch_size": 8,
+  "drafts_written": 8,
+  "send_mode": false,
+  "emails_sent": 0,
+  "claim_check_failures": 0,
+  "rows_with_risk_flags": 0,
+  "generators": {
+    "deterministic": 8
+  },
+  "doc_pains": {
+    "security_questionnaire": 1,
+    "customer_proposal": 4,
+    "investor_update": 1,
+    "policy_pack": 1,
+    "launch_one_pager": 1
+  },
+  "llm_env_present": false,
+  "product_url": "https://use.superdocs.app"
+}

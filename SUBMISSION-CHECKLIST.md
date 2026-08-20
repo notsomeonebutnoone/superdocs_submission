@@ -4,26 +4,27 @@ This checklist is derived from the original growth-task brief. The deadline is i
 
 ## Immediate critical path
 
-- [ ] Confirm the exact Open Task List build card being documented. The current notes say “Proposal AI mini-workflow,” but do not name an exact catalog card. Do not publish the series until the card and the finished artifact clearly match.
-- [ ] Use SuperDocs in an authenticated browser session on synthetic or personally owned material.
-- [ ] Run the selected build end to end and retain real evidence: plan, first failure, changed decision, measured result, and finished artifact.
+- [x] Confirmed the exact Open Task List card: **Weakest-section critique engine** (page 417).
+- [x] Used SuperDocs in an authenticated browser session with the synthetic Atlas Field Systems proposal.
+- [x] Retained genuine evidence of the broad-prompt failure, changed prompt decision, successful constrained ranking, targeted rewrite, human review, and exported result.
+- [x] Ran two constrained-ranking replications on 2026-08-17. Results were not stable: Next Steps and Current State, versus Timeline in the original constrained run.
 - [ ] Verify every product capability shown against the current app and documentation.
 - [ ] Before each public post, enforce the publication rails: candidate disclosure where applicable, no competitor ranking, no confidential material, no unsupported product claim, and at most one SuperDocs-related number drawn from SuperDocs’ own published material. When unsure, use no number.
-- [ ] Publish post 1 with candidate affiliation disclosed.
-- [ ] Publish the remaining four posts across a total span of ten days. Record dates and links only after publication.
+- [x] Publish post 1 with candidate affiliation disclosed.
+- [x] Published all five posts and recorded their dates and links. Posts 1 through 3 were published on August 17, 2026; Posts 4 and 5 were published on August 19, 2026.
 
 | Post | Required content | Planned date | Published URL |
 |---|---|---|---|
-| 1 | Plan + candidate disclosure |  |  |
-| 2 | First real breakage |  |  |
-| 3 | Decision changed after evidence |  |  |
-| 4 | Measured result |  |  |
-| 5 | Finished, reproducible build |  |  |
+| 1 | Plan + candidate disclosure | August 17, 2026 | https://x.com/chimisogood1/status/2089266850190553524 |
+| 2 | First real breakage | August 17, 2026 | https://x.com/chimisogood1/status/2089269287840260184 |
+| 3 | Decision changed after evidence | August 17, 2026 | https://x.com/chimisogood1/status/2089270637374455995 |
+| 4 | Measured result | August 19, 2026 | https://x.com/chimisogood1/status/2090096881536037131 |
+| 5 | Finished, reproducible build | August 19, 2026 | https://x.com/chimisogood1/status/2090098189022237054 |
 
 ## Product evidence
 
 - [ ] Use synthetic data only. Do not expose account details, keys, bookmarks, notifications, or private documents.
-- [ ] Capture screenshots of the real failure and the corrected workflow.
+- [x] Captured screenshots of the real failure, constrained ranking, tracked rewrite, and accepted review.
 - [ ] Complete the Proposal workflow acceptance checks in `task-2-builds/build-in-public/BUILD.md` if that remains the selected build.
 - [ ] Follow the selected card’s `WHERE THE FINISHED WORK GOES` route exactly. Depending on the card, that may be a public-repository PR, the submission form/Drive, or the candidate’s own channel. The assigned five-post series itself goes on the candidate’s own channel.
 

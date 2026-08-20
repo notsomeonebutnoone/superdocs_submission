@@ -1,5 +1,7 @@
 # From agent draft to finished document
 
+**Submission one-page — SuperDocs GTM / Growth Engineer task**
+
 ## The bet
 
 SuperDocs should begin with a behavior, not an industry: seed-stage technical founders and founding engineers who already use coding agents every day but still personally finish proposals, investor updates, security questionnaires, and launch one-pagers. Their agent can produce words. The workflow breaks when those words must become a reviewed, branded document that another company can open.
@@ -20,7 +22,7 @@ The landing page is written for the same audience and sells one behavior change:
 
 ## The builds
 
-The build-in-public project is a Proposal AI mini-workflow on SuperDocs, not a proposal-generator clone. It starts from an existing branded template and a structured synthetic brief. Instructions may populate named sections, but they may not alter pricing, legal text, or brand styles. A human reviews changes, can revert the instruction that missed, and exports only the approved document. Five posting drafts tell the plan, first failure, decision change, measured result, and finished workflow; the opening post discloses candidate affiliation.
+The build-in-public project is the Open Task List card **Weakest-section critique engine**. It tests five named sections of an existing synthetic proposal against a fixed approval goal, ranks them with grounded reasons, and rewrites only the weakest section after human review. The broad first prompt failed; a constrained prompt succeeded and selected Timeline. Two fresh replications then selected Next Steps and Current State, proving that the ranking was not stable enough to drive automatic edits. Human review restored a weakened control sentence before accepting the original Timeline rewrite. Export verification proved Pricing, Terms, all non-Timeline text, and list content were preserved, while also exposing a cover-title style regression. Five published posts tell the plan, real failure, changed prompt decision, measured replication, and finished workflow; the opening post discloses candidate affiliation.
 
 The ecosystem map prioritizes distribution where SuperDocs' remote MCP and existing plugin assets already fit: Claude Code, Cursor, VS Code, and direct Codex before heavier hosted directories or custom REST adapters. The real-company use cases use public workflow evidence, but label product fit and conversation openers as hypotheses. No individual is named and no company is contacted.
 
@@ -28,4 +30,4 @@ The ecosystem map prioritizes distribution where SuperDocs' remote MCP and exist
 
 Once outreach is explicitly permitted, I would manually review a small set against a fixed quality rubric and test one variable: broad “document loop” language versus workflow-specific language. Qualified replies would be the primary signal. Negative replies and claim accuracy would be guardrails. I would not add channels until this audience-message pair earns evidence.
 
-The submission's central choice is restraint: one audience, one machine, two reproducible runs, one piece, honest measurement, and clear boundaries between what is built, what is researched, and what still requires a human recording or market test.
+My central choice was restraint: one audience, one machine, two reproducible runs, one piece, honest measurement, and clear boundaries between what I built, what I researched, and what still requires a permitted market test. The five-post series is published, the build evidence is preserved in the repository, and no outreach was sent.

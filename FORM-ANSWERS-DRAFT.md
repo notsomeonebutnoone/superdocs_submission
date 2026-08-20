@@ -1,19 +1,17 @@
-# Submission form answer worksheet
+# Submission-ready form answers
 
-These are working drafts, not submission-ready answers. Replace every bracketed prompt with firsthand observations, enter the AI-built percentage, and personally re-check the public-site critique before pasting anything into the form.
+These answers reflect the completed repository evidence and five published build-in-public posts. Paste them into the corresponding form fields, shortening only if the form imposes a character limit.
 
 ## 1. What broke?
 
 ### SuperDocs product and documentation
 
-The authenticated product run is still required before this answer can be finalized. During that run, record each issue in this format:
+The authenticated weakest-section experiment exposed four firsthand product issues:
 
-- **Action:** [what I did]
-- **Expected:** [what I expected]
-- **Observed:** [what happened]
-- **Impact:** [cosmetic / slowed me down / blocked the build]
-- **Evidence:** [screenshot, file, or reproducible steps]
-- **Reported through:** [in-app bug button or task email]
+- **Broad ranking instruction did not complete.** Action: requested a weakest-to-strongest ranking grounded in the document without edits. Expected: an ordered analysis. Observed: a rephrase response followed by progress statements with no ranking. Impact: slowed the build; resolved by narrowing the task to five named sections and an explicit output contract. Evidence: `Screenshot 2026-08-15 152045.png`.
+- **Change summary was not grounded in document state.** Action: asked for a breakdown after the stalled ranking. Expected: a statement that no changes existed. Observed: the response acknowledged no diff, then described revisions that a normalized full-text comparison proved had not occurred. Impact: material trust issue; required independent document comparison. Evidence: `Screenshot 2026-08-15 152102.png` and `Screenshot 2026-08-15 152111.png`.
+- **Repeated rankings were unstable.** Action: ran the same constrained five-section ranking prompt twice in fresh sessions against the unchanged proposal. Expected: a defensible and stable weakest-section result. Observed: replication A selected Next Steps, replication B selected Current State, and the earlier constrained run selected Timeline. Replication B also displayed the numbered list strongest-to-weakest despite the prompt defining 1 as weakest. Impact: prevents automatic weakest-section rewriting; a human must choose among the critiques. Evidence: two 2026-08-17 replication captures.
+- **DOCX export changed an unrelated title style.** Action: exported the reviewed proposal and compared it with the baseline. Expected: protected wording, list structure, and unrelated styles to remain unchanged. Observed: Pricing, Terms, all non-Timeline text, and all 76 list items were preserved, but the cover title changed from Word's `Title` style to `Heading 1`. Impact: partial formatting failure that requires a manual export check. Evidence: `EXPORT-VERIFICATION-2026-08-17.md` and the baseline/final comparison files.
 
 ### My own machine
 
@@ -35,7 +33,7 @@ A finished-document event means the workspace completes an AI edit, reviews or a
 
 **Drop or defer:** broad document-management/archive positioning. SuperDocs is strongest as the editing and execution layer. Competing as a general DMS would blur the wedge and add permissions, retention, and governance complexity before the core edit-review-export loop is undeniable.
 
-**Frictions and bugs to fix immediately:** Replace this line after the authenticated run with the confirmed issues from answer 1, ordered by user impact. Do not infer product bugs from the task brief alone.
+**Frictions and bugs to fix immediately:** Ground change summaries in the actual document diff; make stalled or incomplete requests fail clearly; enforce requested ranking direction; and prevent unrelated DOCX styles from changing during export.
 
 ## 4. How would you make the entire GTM operation run itself?
 
@@ -50,15 +48,15 @@ The practical stack can start with scheduled Python or n8n workflows, a small re
 
 ## 5. What would you change on superdocs.app and docs.superdocs.app?
 
-Draft research basis: the public pages at `https://superdocs.app` and `https://docs.superdocs.app` were re-read on 2026-08-15. The candidate should personally re-check them before submission and remove any point that no longer matches the live pages.
+Research basis: the public pages at `https://superdocs.app` and `https://docs.superdocs.app` were re-checked on 2026-08-20.
 
 ### Website
 
 - Keep the opening “edit inside the document” contrast, then show one complete interactive workflow from upload/template through targeted edit, review, revert, and export before expanding into platform breadth.
-- Split the page earlier into two explicit journeys: “edit my documents” and “add document AI to my product.” Preserve a third, smaller route for agent/MCP users.
-- Add an availability and evidence table for major capabilities and quantitative claims. Link each measured claim to methodology and label preview, request-only, and planned features consistently.
+- Consolidate the overlapping audience and integration sections into three persistent journeys: edit my documents, add document AI to my product, and connect my agent. Keep the same labels from the first decision point through the final call to action.
+- Add an availability and evidence table for major capabilities and quantitative claims. Link measured claims to methodology and label available, request-only, coming-soon, and roadmap features consistently—especially where white-label embedding and deployment options are described.
 - Replace some feature inventory with three concrete outcome pages, such as proposals, contract review, and policy/report updates, each showing inputs, approval boundary, exported output, and limitations.
-- Clarify the relationship between the free web-app allowance and API usage/pricing at the decision point rather than making visitors infer it across sections.
+- Use one unit consistently when describing the free allowance: the homepage alternates between “edits” and “AI operations,” while the pricing explanation applies the allowance across the web editor, API, and MCP.
 
 ### Documentation
 
@@ -70,7 +68,7 @@ Draft research basis: the public pages at `https://superdocs.app` and `https://d
 
 ## Final form-only fields
 
-- **Approximate AI-built percentage:** [enter an honest estimate]
+- **Approximate AI-built percentage:** Approximately 85%. AI produced most of the initial research synthesis, implementation, tests, copy variants, and documentation. I directed the audience choice, constraints, evidence standard, authenticated product experiments, publishing decisions, review judgments, recordings, and final claims.
 - **How I directed AI:** I set the audience, constraints, product-claim ceiling, channel choice, acceptance criteria, and cuts; used AI for research synthesis, implementation, tests, copy variants, and verification; and retained human responsibility for authenticated product use, publishing, voice recordings, and final claims.
-- **What works:** The offline machine, two-batch reproducibility, safety checks, landing page, measurement, ecosystem map, use-case research, posting drafts, clip plan, demo script, and one-page draft.
-- **What remains incomplete:** Authenticated build evidence, actual publication links, both human-voice recordings, selected-card/destination confirmation, repository remote/collaborator setup, and final form submission.
+- **What works:** The offline machine and its reproducible two-batch runs; deterministic safety and claim checks; the responsive audience landing page; honest measurement plan; agent-ecosystem map; ten real-company use-case hypotheses; authenticated weakest-section experiment; review and export verification; and all five published build-in-public posts. The assigned card is **Weakest-section critique engine**.
+- **What remains incomplete:** Final submission packaging: upload or attach the human-voice recording links, create or confirm the private repository remote, invite `o-kadam`, and submit the completed Google Form. No real-company outreach was performed, so demand metrics remain intentionally unproven.

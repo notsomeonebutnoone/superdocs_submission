@@ -1,0 +1,18 @@
+services:
+  n8n:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5678:5678"
+    environment:
+      # n8n 2.x disables Execute Command by default. This trusted, local-only
+      # workflow requires it to launch the mounted Python machine.
+      NODES_EXCLUDE: "[]"
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ..:/files/task-1-growth-machine
+    restart: unless-stopped
+
+volumes:
+  n8n_data:

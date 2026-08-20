@@ -112,7 +112,7 @@
     },
     {
       "parameters": {
-        "content": "## Before running\n1. Use self-hosted n8n.\n2. Mount this folder into n8n.\n3. Set `projectDirectory` to that in-container path.\n4. Keep `useLlm=false` for a reproducible run.\n\nThe Execute Command node may be disabled by administrators and is not available in n8n Cloud.",
+        "content": "## Before running\n1. Use self-hosted n8n (not n8n Cloud).\n2. In n8n 2.x set `NODES_EXCLUDE=[]`, then restart n8n.\n3. Mount this folder at `/files/task-1-growth-machine`.\n4. Keep `useLlm=false` for a reproducible run.\n\nEasiest setup: run `docker compose up -d --build` from this workflow's `n8n/` folder.",
         "height": 260,
         "width": 420,
         "color": 7

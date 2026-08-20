@@ -26,7 +26,7 @@ Manual Trigger
 
 ## Requirements
 
-- Self-hosted n8n. The Execute Command node is not available in n8n Cloud and may be disabled by an administrator.
+- Self-hosted n8n. The Execute Command node is not available in n8n Cloud. Starting with n8n 2.x it is disabled by default and must be explicitly enabled with `NODES_EXCLUDE="[]"`.
 - Python 3 available in the n8n runtime.
 - This `task-1-growth-machine` folder mounted into the n8n container or host.
 - No credentials are needed for the default deterministic run.
@@ -49,19 +49,35 @@ The generated files appear inside the mounted Task 1 directory:
 - `runs/<runId>/batch.snapshot.csv`: exact input snapshot
 - `runs/<runId>/SUMMARY.md`: human-readable summary
 
-## Docker example
+## Recommended Docker setup (fixes the `Unrecognized node type` error)
 
-If n8n runs in Docker, mount the repository folder read-write because the machine creates run evidence and drafts:
+From this `n8n/` directory run:
 
 ```bash
-docker run --rm -it \
-  -p 5678:5678 \
-  -v n8n_data:/home/node/.n8n \
-  -v /absolute/path/to/task-1-growth-machine:/files/task-1-growth-machine \
-  docker.n8n.io/n8nio/n8n
+docker compose up -d --build
 ```
 
-The exact deployment command may differ for an existing n8n installation. The important part is that the directory configured in the workflow matches the in-container mount path.
+The included `compose.yaml` does all required setup:
+
+- explicitly enables Execute Command on n8n 2.x with `NODES_EXCLUDE="[]"`
+- builds an n8n image containing Python 3
+- mounts the project read-write at `/files/task-1-growth-machine`
+- persists n8n data in the `n8n_data` Docker volume
+
+Open <http://localhost:5678>, import the workflow JSON, and execute it. If the workflow was already imported while the node was disabled, restarting this configured instance is sufficient; the `?` node resolves to Execute Command.
+
+### Existing self-hosted installation
+
+Add this environment variable to the n8n service and restart every n8n process (main and workers, if used):
+
+```yaml
+environment:
+  NODES_EXCLUDE: "[]"
+```
+
+Also ensure `python3` is installed in the container/runtime and that the project is mounted at the configured path. Do not use this setting on a shared or untrusted n8n instance: Execute Command can run host/container shell commands.
+
+This workflow cannot run on n8n Cloud because Cloud does not expose Execute Command or the local mounted Python project.
 
 ## Optional LLM polishing
 
